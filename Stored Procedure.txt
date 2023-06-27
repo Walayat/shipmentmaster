@@ -1,0 +1,30 @@
+USE [ShipmentMaster]
+GO
+/****** Object:  StoredProcedure [dbo].[Shipper_Shipment_Details]    Script Date: 6/28/2023 12:37:04 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROCEDURE [dbo].[Shipper_Shipment_Details] --1
+@shipper_id INT
+AS
+BEGIN
+
+SELECT  SHIP.shipment_id, S.shipper_name, 
+		C.carrier_name, SHIP.shipment_description,
+		SHIP.shipment_weight, SR.shipment_rate_description
+
+FROM SHIPMENTS SHIP
+
+INNER JOIN SHIPPERS S
+ON SHIP.shipper_id = S.shipper_id
+INNER JOIN CARRIERS C
+ON SHIP.carrier_id = C.carrier_id
+INNER JOIN SHIPMENT_RATES SR
+ON SHIP.shipment_rate_id = SR.shipment_rate_id
+
+WHERE SHIP.shipper_id = @shipper_id
+
+END;
+GO
