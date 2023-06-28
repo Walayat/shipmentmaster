@@ -17,24 +17,46 @@ export default function RandomQuote() {
     return (
         <>
             <NavBar />
-            <Card className="p-4 mt-5 m-auto w-75">
-                <div className="d-flex m-2">
-                    <b className="m-2">Author Name: </b>
-                    <p className="m-2">{quote.author}</p>
-                </div>
-                <div className="d-flex m-2">
-                    <b className="m-2">Content: </b>
-                    <p className="m-2">{quote.content}</p>
-                </div>
-                <div className="d-flex m-2">
-                    <b className="m-2">Tags: </b>
-                    <p className="m-2">{quote?.tags?.join(', ')}</p>
-                </div>
-                <div className="d-flex m-2">
-                    <b className="m-2">Author Slug: </b>
-                    <p className="m-2">{quote.authorSlug}</p>
-                </div>
+            <Card className="p-4 mt-5 m-auto w-50">
+                <Card.Header>
+                    <h5 className="text-center">Random Quote Details</h5>
+                </Card.Header>
+                <Card.Body>
+                    <div className="row mb-3">
+                        <div className="col-3">
+                            <b>Author Name:</b>
+                        </div>
+                        <div className="col-9">
+                            <p>{quote.author}</p>
+                        </div>
+                    </div>
+                    <div className="row mb-3">
+                        <div className="col-3">
+                            <b>Content:</b>
+                        </div>
+                        <div className="col-9">
+                            <p>{quote.content}</p>
+                        </div>
+                    </div>
+                    <div className="row mb-3">
+                        <div className="col-3">
+                            <b>Tags:</b>
+                        </div>
+                        <div className="col-9">
+                            <p>{quote?.tags?.join(', ')}</p>
+                        </div>
+                    </div>
+                    <div className="row mb-3">
+                        <div className="col-3">
+                            <b>Author Slug:</b>
+                        </div>
+                        <div className="col-9">
+                            <p>{quote.authorSlug}</p>
+                        </div>
+                    </div>
+                </Card.Body>
             </Card>
+
         </>
     )
 }

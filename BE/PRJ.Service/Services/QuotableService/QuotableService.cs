@@ -88,6 +88,24 @@ namespace PRJ.Service.Services.QuotableService
 							else
 								response.longResults.Add(quote);
 						}
+						if (!(string.IsNullOrEmpty(requestDto.category)))
+						{
+							if (requestDto.category.Equals("short"))
+							{
+								response.mediumResults = new List<Result>();
+								response.longResults = new List<Result>();
+							}
+							else if (requestDto.category.Equals("medium"))
+							{
+								response.shortResults = new List<Result>();
+								response.longResults = new List<Result>();
+							}
+							else
+							{
+								response.shortResults = new List<Result>();
+								response.mediumResults = new List<Result>();
+							}
+						}
 						response.results = new List<Result>();
 					}
 				}

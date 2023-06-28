@@ -41,3 +41,14 @@
 .cursor-pointer {
   cursor: pointer;
 }
+
+.single-line {
+  white-space: nowrap;
+}
+
+.dropdown-align-ongrid {
+  right: 16%;
+  left: auto;
+  position: absolute;
+  text-align: right;
+}

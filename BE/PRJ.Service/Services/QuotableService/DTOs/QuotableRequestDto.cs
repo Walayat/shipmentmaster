@@ -12,5 +12,6 @@ namespace PRJ.Service.Services.QuotableService.DTOs
 		public string? author { get; set; }
 		public int page { get; set; } = 1;
 		public int limit { get; set; } = 30;
+		public string? category { get; set; }
 	}
 }

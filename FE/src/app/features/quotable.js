@@ -13,11 +13,11 @@ export const getRandomQuote = async () => {
 };
 
 export const getQuotesByAuthor = async (req) => {
-    const { author, page, limit } = req;
+    const { author, page, limit, category } = req;
 
     try {
         const response = await api.get(
-            `/getQuotesByAuthor?author=${author}&page=${page}&limit=${limit}`
+            `/getQuotesByAuthor?author=${author}&page=${page}&limit=${limit}&category=${category}`
         );
         return response;
     } catch (error) {
